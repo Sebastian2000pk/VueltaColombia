@@ -46,6 +46,9 @@ if __name__ == '__main__':
     elif option == "3":
       try:
         result = connection.get_data("SELECT * FROM teams WHERE team_number = '{}'".format(input("Número del equipo: ")))
+        if len(result) == 0:
+          print("No se encontró el equipo")
+          continue
         team = Team(connection, result[0])
         print("\n", team)
         
