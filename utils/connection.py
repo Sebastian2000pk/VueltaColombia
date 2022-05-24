@@ -15,6 +15,27 @@ class Conection():
         headquarters_address TEXT,
         phone_number INTEGER,
         email TEXT)""")
+      # ----------- tabla de ciclistas --------------------#
+      self.set_data("""CREATE TABLE IF NOT EXISTS cyclists (
+        regitration_number INTEGER PRIMARY KEY AUTOINCREMENT, 
+        indetification_number INTEGER, 
+        name TEXT, 
+        last_name TEXT, 
+        birth_date TEXT, 
+        country TEXT,
+        team_number INTEGER, 
+        photo TEXT,
+        ranking_UCI INTEGER)""")
+      # ----------- tabla de etapas --------------------#
+      self.set_data("""CREATE TABLE IF NOT EXISTS lamps (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        lamp_number INTEGER, 
+        cyclist_number INTEGER, 
+        position INTEGER, 
+        time TEXT,
+        team_number INTEGER,
+        retired INTEGER)""")
+
       
     except Exception as e:
       print('DB no connected!', e)
